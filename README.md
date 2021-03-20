@@ -1,2 +1,2 @@
 # cloud_infra
-page counter project
+a place to play with whatever new hotness AWS puts out
