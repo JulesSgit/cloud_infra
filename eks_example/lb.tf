@@ -1,7 +1,7 @@
 resource "aws_elb" "lb" {
-  name               = "webserver-lb"
-  subnets            = [aws_subnet.public_a.id, aws_subnet.public_c.id]
-  security_groups    = [aws_security_group.lb.id]
+  name            = "webserver-lb"
+  subnets         = [aws_subnet.public_a.id, aws_subnet.public_c.id]
+  security_groups = [aws_security_group.lb.id]
 
   listener {
     instance_port     = 80

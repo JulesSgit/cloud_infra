@@ -12,7 +12,7 @@ data "aws_iam_policy_document" "eks-assume-role-policy" {
 
 # ROLE
 resource "aws_iam_role" "eks_cluster_role" {
-  name = "eks_cluster_role"
+  name               = "eks_cluster_role"
   assume_role_policy = data.aws_iam_policy_document.eks-assume-role-policy.json
 }
 
@@ -24,15 +24,15 @@ resource "aws_iam_role_policy_attachment" "eks-cluster-policy" {
 
 resource "aws_iam_role_policy_attachment" "eks-worker-node-policy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
-  role = aws_iam_role.eks_cluster_role
+  role       = aws_iam_role.eks_cluster_role
 }
 
 resource "aws_iam_role_policy_attachment" "eks-cni-policy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
-  role = aws_iam_role.eks_cluster_role
+  role       = aws_iam_role.eks_cluster_role
 }
 
 resource "aws_iam_role_policy_attachment" "lb-policy" {
   policy_arn = "arn:aws:iam::aws:policy/ElasticLoadBalancingFullAccess"
-  role = aws_iam_role.eks_cluster_role
+  role       = aws_iam_role.eks_cluster_role
 }
