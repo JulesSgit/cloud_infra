@@ -27,3 +27,27 @@ variable "public-subnet-cidr" {
   type        = list
   description = "Public Subnet CIDR"
 }
+
+variable "cluster-version" {
+  default = "1.20"
+  type = string
+  description = "The version of the EKS Cluster"
+}
+
+variable "instance-type" {
+    default = "t2.small"
+    type = string
+    description = "Size of the eks nodes. Keeping it small to keep the cost down"
+}
+
+variable "asg-desired-capacity" {
+  default = 3
+  type = string
+  description = "Autoscaling Desired node capacity"
+}
+
+variable "asg-max-size" {
+    default = 5
+    type = string
+    description = "autoscaling desired node max size"
+}
