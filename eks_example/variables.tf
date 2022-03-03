@@ -41,13 +41,13 @@ variable "instance-type" {
 }
 
 variable "asg-desired-capacity" {
-  default = 3
+  default = 1
   type = string
   description = "Autoscaling Desired node capacity"
 }
 
 variable "asg-max-size" {
-    default = 5
+    default = 3
     type = string
     description = "autoscaling desired node max size"
 }
