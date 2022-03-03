@@ -6,14 +6,6 @@ resource "aws_eip" "webserver" {
   }
 }
 
-resource "aws_eip" "nat" {
-  vpc = true
-
-  tags = {
-    Name = "nat eip"
-  }
-}
-
 resource "aws_instance" "ghost" {
   ami                         = "ami-01ae2cc311c621dfb"
   instance_type               = "t2.small"
