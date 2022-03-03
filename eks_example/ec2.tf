@@ -8,7 +8,7 @@ resource "aws_eip" "webserver" {
 
 resource "aws_iam_instance_profile" "node" {
   name = "${var.cluster-name}-eks-node-instance-profile"
-  role = aws_iam_role.node.name
+  role = aws_iam_role.eks_node_role.name
 }
 
 /* resource "aws_instance" "ghost" {
