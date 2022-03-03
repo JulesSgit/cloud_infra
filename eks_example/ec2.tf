@@ -17,8 +17,8 @@ resource "aws_eip" "nat" {
 resource "aws_instance" "ghost" {
   ami                         = "ami-01ae2cc311c621dfb"
   instance_type               = "t2.small"
-  vpc_security_group_ids      = [aws_security_group.lb.id, aws_security_group.web.id]
-  subnet_id                   = aws_subnet.public_a
+  vpc_security_group_ids      = [module.vpc.default_security_group_id, aws_security_group.web.id]
+  subnet_id                   = module.vpc.public_subnets[0]
   associate_public_ip_address = true
 }
 

@@ -1,5 +1,5 @@
 resource "aws_security_group" "web" {
-  vpc_id = aws_vpc.main.id
+  vpc_id = module.vpc.vpc_id
 
   ingress {
     from_port   = "80"
@@ -33,7 +33,7 @@ resource "aws_security_group" "web" {
 resource "aws_security_group" "lb" {
   name        = "lb"
   description = "security group for load balancer"
-  vpc_id      = aws_vpc.main.id
+  vpc_id      = module.vpc.vpc_id
 
   tags = {
     Name = "lb_sg"
