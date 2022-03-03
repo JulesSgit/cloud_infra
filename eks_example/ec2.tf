@@ -1,11 +1,3 @@
-resource "aws_eip" "webserver" {
-  vpc = true
-
-  tags = {
-    Name = "webserver ip"
-  }
-}
-
 resource "aws_iam_instance_profile" "node" {
   name = "${var.cluster-name}-eks-node-instance-profile"
   role = aws_iam_role.eks_node_role.name
