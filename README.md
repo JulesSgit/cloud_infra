@@ -1,2 +1,2 @@
 # cloud_infra
-a place to play with whatever new hotness AWS puts out
+A place to play with all things AWS and beyond
