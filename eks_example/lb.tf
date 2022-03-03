@@ -1,6 +1,6 @@
 resource "aws_elb" "lb" {
   name            = "webserver-lb"
-  subnets         = module.vpc.public_subnets[0]
+  subnets         = [module.vpc.public_subnets[0]]
   security_groups = [aws_security_group.lb.id]
 
   listener {
