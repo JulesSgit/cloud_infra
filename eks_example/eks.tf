@@ -1,5 +1,5 @@
 # Create after iam role and permissions have been created
-module "eks" {
+/* module "eks" {
   source = "terraform-aws-modules/eks/aws"
   cluster_name    = var.cluster-name
   cluster_version = var.cluster-version
@@ -16,3 +16,4 @@ module "eks" {
     },
   ]
 }
+ */
